@@ -8,30 +8,50 @@ import java.util.Scanner;
 
 public class UserLoginApplication {
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) throws IOException {
+		BufferedReader fileReader = null;
 		try {
-			BufferedReader fileReader = new BufferedReader(new FileReader("dataa3.txt"));
-			System.out.println(fileReader.toString());
-			fileReader.close();
+			fileReader = new BufferedReader(new FileReader("dataa3.txt"));
+			System.out.println(fileReader.readLine());
+			int loginAttempts = 5;
+			while (loginAttempts < 0) {
+				System.out.println("Attempts left: " + loginAttempts);
+				
+			}
+			
 		} catch (FileNotFoundException e) {
+			System.out.println();
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		}finally {
+			fileReader.close();
 		}
 		
 		UserLoginService userService = new UserLoginService();
-		UserLoginPojo[] users = new UserLoginPojo[3];
+		Students[] users = new Students[3];
 		
 		for (int i = 0; i < 3; i++) {
 			
 			users[i] = userService.createUser("user" + (i+1), "password" + (i+1), "name" + (i+1));
+			
 		}
-		System.out.println(users);
+		System.out.print(args);
 		
 		Scanner scanner = new Scanner(System.in);
 		String userEmailInput = collectInput(scanner, "Enter your email:");
 		String userPasswordInput = collectInput (scanner, "Enter your password");
+		for (String arg: args) {
+			System.out.print("Welcome" + args);
+			
+			if ("" != arg) {
+				System.out.println("Invalid login. Please try again.");
+			}
+			
+			
+		}
+		
+		
 		
 		
 	}

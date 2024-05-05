@@ -1,17 +1,19 @@
 package com.coderscampus;
 
-public class UserLoginPojo {
+public class Students {
 	String username;
 	String password;
 	String name;
-	String unsuccessfulLoginAttempts;
 	
-	public String getUnsuccessfulLoginAttempts() {
-		return unsuccessfulLoginAttempts;
-	}
+	
+	
+	
 
-	public void setUnsuccessfulLoginAttempts(String unsuccessfulLoginAttempts) {
-		this.unsuccessfulLoginAttempts = unsuccessfulLoginAttempts;
+	public Students(String username, String password, String name) {
+		
+		this.username = username;
+		this.password = password;
+		this.name = name;
 	}
 
 	public String getUsername () {
