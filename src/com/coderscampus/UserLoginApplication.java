@@ -10,56 +10,39 @@ public class UserLoginApplication {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader fileReader = null;
+
 		try {
 			fileReader = new BufferedReader(new FileReader("dataa3.txt"));
 			System.out.println(fileReader.readLine());
+
+			Scanner scanner = new Scanner(System.in);
 			int loginAttempts = 5;
-			while (loginAttempts < 0) {
-				System.out.println("Attempts left: " + loginAttempts);
-				
+			while (loginAttempts > 0) {
+				System.out.println("Enter your email: ");
+				String userEmailInput = scanner.nextLine();
+				System.out.println("Enter your password: ");
+				String userPasswordInput = scanner.nextLine();
+
 			}
-			
+			scanner.close();
+
 		} catch (FileNotFoundException e) {
 			System.out.println();
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			fileReader.close();
 		}
-		
+
 		UserLoginService userService = new UserLoginService();
 		Students[] users = new Students[3];
-		
+
 		for (int i = 0; i < 3; i++) {
-			
-			users[i] = userService.createUser("user" + (i+1), "password" + (i+1), "name" + (i+1));
-			
-		}
-		System.out.print(args);
-		
-		Scanner scanner = new Scanner(System.in);
-		String userEmailInput = collectInput(scanner, "Enter your email:");
-		String userPasswordInput = collectInput (scanner, "Enter your password");
-		for (String arg: args) {
-			System.out.print("Welcome" + args);
-			
-			if ("" != arg) {
-				System.out.println("Invalid login. Please try again.");
-			}
-			
-			
-		}
-		
-		
-		
-		
-	}
 
-	private static String collectInput(Scanner scanner, String messageToDisplay) {
-		System.out.println(messageToDisplay);
-		String userInput = scanner.nextLine();
-		return userInput;
-	}
+			users[i] = userService.createUser("user" + (i + 1), "password" + (i + 1), "name" + (i + 1));
 
+		}
+
+	}
 }
