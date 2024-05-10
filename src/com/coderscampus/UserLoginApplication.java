@@ -24,13 +24,13 @@ public class UserLoginApplication {
 				String userPasswordInput = scanner.nextLine();
 
 			}
-			scanner.close();
 
 		} catch (FileNotFoundException e) {
 			System.out.println();
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+	
 		} finally {
 			fileReader.close();
 		}
