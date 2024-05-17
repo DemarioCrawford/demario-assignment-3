@@ -1,5 +1,0 @@
-Rooneymusic4@gmail.com,password124,RooneyRackz
-test@email.com,passwordTest!1, Test User
-another@user.com,asdfasdf, Another User
-john.doe@mydomain.net,Hdk398jf!, John Doe
-jane.doe@myotherdomain.com,sunrise-sunset,Jane Doe

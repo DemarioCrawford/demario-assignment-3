@@ -8,41 +8,48 @@ import java.util.Scanner;
 
 public class UserLoginApplication {
 
+	private static com.coderscampus.UserLoginService UserLoginService;
+
 	public static void main(String[] args) throws IOException {
-		BufferedReader fileReader = null;
+//Read the file and test it with a syso 
 
-		try {
-			fileReader = new BufferedReader(new FileReader("dataa3.txt"));
-			System.out.println(fileReader.readLine());
+		FileService fileService = new FileService();
+		Users[] users = fileService.readDataFromFile("dataa3.txt");
+		 for (Users user : users) {
+			 System.out.println(user);
+		 }
 
-			Scanner scanner = new Scanner(System.in);
-			int loginAttempts = 5;
-			while (loginAttempts > 0) {
-				System.out.println("Enter your email: ");
-				String userEmailInput = scanner.nextLine();
-				System.out.println("Enter your password: ");
-				String userPasswordInput = scanner.nextLine();
-
-			}
-
-		} catch (FileNotFoundException e) {
-			System.out.println();
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-	
-		} finally {
-			fileReader.close();
-		}
-
-		UserLoginService userService = new UserLoginService();
-		Students[] users = new Students[3];
-
-		for (int i = 0; i < 3; i++) {
-
-			users[i] = userService.createUser("user" + (i + 1), "password" + (i + 1), "name" + (i + 1));
-
-		}
+		com.coderscampus.UserLoginService users1 = UserLoginService = new UserLoginService();
+//		Scanner scanner = new Scanner(System.in);
+//
+//		int attempts = 0;
+//		final int MAX_ATTEMPTS = 5;
+//
+//		while (attempts < MAX_ATTEMPTS) {
+//			System.out.println("Enter your email");
+//			String emailInput = scanner.nextLine();
+//			System.out.println("Enter your password");
+//			String passwordInput = scanner.nextLine();
+//			// make variable a string
+//			// break it into an array
+//			// create user object
+//			// put into an array of user objects
+//
+//			if (UserLoginService.authenticate(emailInput, passwordInput)) {
+//				System.out.println("Welcome: " + getNameFromEmail(emailInput));
+//				return;
+//			} else {
+//				System.out.println("Invalid login, please try again");
+//				attempts++;
+//			}
+//		}
+//
+//		System.out.println("Too many failed login attempts, you are now locked out.");
 
 	}
+
+	private static String getNameFromEmail(String emailInput) {
+		return emailInput;
+	}
+
 }

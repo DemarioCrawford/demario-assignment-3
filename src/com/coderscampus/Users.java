@@ -1,17 +1,19 @@
 package com.coderscampus;
 
-public class Students {
+public class Users {
+	// give students properties
 	private String email;
 	private String password;
 	private String name;
 
-	public Students(String email, String password, String name) {
-
+	public Users(String email, String password, String name) {
+		// call the properties using this.
 		this.email = email;
 		this.password = password;
 		this.name = name;
 	}
 
+	// getters and setters
 	public String getEmail() {
 		return email;
 	}
@@ -35,4 +37,11 @@ public class Students {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+// overriding the to string
+	@Override
+	public String toString() {
+		return "Users [email=" + email + ", password=" + password + ", name=" + name + "]";
+	}
+
 }
