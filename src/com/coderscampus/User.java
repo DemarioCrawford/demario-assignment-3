@@ -1,25 +1,24 @@
 package com.coderscampus;
 
-public class Users {
+public class User {
 	// give students properties
-	private String email;
+	private String username;
 	private String password;
 	private String name;
 
-	public Users(String email, String password, String name) {
+	public User(String username, String password, String name) {
 		// call the properties using this.
-		this.email = email;
+		this.username = username;
 		this.password = password;
 		this.name = name;
 	}
 
-	// getters and setters
-	public String getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -38,10 +37,10 @@ public class Users {
 		this.name = name;
 	}
 
-// overriding the to string
 	@Override
 	public String toString() {
-		return "Users [email=" + email + ", password=" + password + ", name=" + name + "]";
+		return "User [username=" + username + ", password=" + password + ", name=" + name + "]";
 	}
+
 
 }
