@@ -36,9 +36,9 @@ public class UserApplication {
 			}
 
 		}
-			if (!loggedIn) {
-				System.out.println("Too many failed login attempts, you are now locked out");
-			}
+		if (!loggedIn) {
+			System.out.println("Too many failed login attempts, you are now locked out");
+		}
 
 	}
 
